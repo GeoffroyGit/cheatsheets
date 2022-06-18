@@ -95,6 +95,7 @@ sns.countplot()
 sns.catplot()
 sns.regplot()
 sns.pairplot()
+sns.heatmap()
 
 sns.countplot(data=df, x="time", hue="smoker")
 sns.catplot(data=df, x='day', y='total_bill' kind="box")
