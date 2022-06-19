@@ -28,7 +28,6 @@ df = pd.DataFrame()
 
 ## train test split
 
-# Define X and y
 X = df[["feature one", "feature two"]]
 X = df.drop(columns=["useless feature one", "useless feature two"])
 y = df["target"]
