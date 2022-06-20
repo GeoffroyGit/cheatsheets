@@ -11,6 +11,9 @@ df = pd.DataFrame()
 # first, let's have a look at the data
 sns.regplot(data=df.sample(100), y="review_score", x="wait_time")
 
+# preprocessing
+# at least, remove missing values
+
 # use statsmodels for linear regression:
 smf.ols(...)
 # use statsmodels for logistic regaression:
