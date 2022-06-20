@@ -5,6 +5,7 @@
 
 import numpy as np
 import pandas as pd
+import seaborn as sns
 
 df = pd.DataFrame()
 
@@ -37,6 +38,10 @@ df.sort_values(by='Population', ascending=False) # sort on values
 df.sort_values(by='Population', na_position='first')
 
 df.groupby('Region').sum()
+df.groupby('Region').count()
+df.groupby('Region').mean()
+df.groupby('Region').median()
+df.groupby('Region').std()
 
 # SQL with Pandas
 
@@ -73,3 +78,14 @@ df["toto"].replace(np.nan, df["toto"].mean(), inplace=True) # Replace missing Pe
 # Less than 30% of values missing: impute a value that makes sense e.g. Median, mean, mode...
 
 # but instead of all this, we can use sklearn Imputers (see sklearn.py)
+
+# -------------
+# example: standardize a dataframe
+
+def standardize(df, features):
+    df_standardized = df.copy()
+    for f in features:
+        mu = df[f].mean()
+        sigma = df[f].std()
+        df_standardized[f] = df[f].map(lambda x: (x - mu) / sigma)
+    return df_standardized
