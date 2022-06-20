@@ -42,6 +42,7 @@ df.groupby('Region').count()
 df.groupby('Region').mean()
 df.groupby('Region').median()
 df.groupby('Region').std()
+df.groupby("Region", as_index=False).sum() # as_index=False keeps "Region" in a column instead of making it the index
 
 # SQL with Pandas
 
