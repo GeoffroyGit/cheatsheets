@@ -96,7 +96,7 @@ model.compile(optimizer=custom_opt)
 
 # fit model
 es = EarlyStopping(patience=10, restore_best_weights=True)
-history = model.fit(X_train, y_train, batch_size=16, epochs=100, validation_split=0.3, callbacks=[es], shuffle=True)
+history = model.fit(X_train, y_train, batch_size=16, epochs=100, validation_split=0.3, callbacks=[es])#, shuffle=True)
 #plot_history(history)
 
 # evaluate model

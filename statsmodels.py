@@ -19,14 +19,11 @@ smf.ols(...)
 # use statsmodels for logistic regaression:
 smf.logit(...)
 
-# instantiate a linear model
-model = smf.ols(formula = 'review_score ~ wait_time + delay_vs_expected', data=df)
+# instantiate and fit a linear model
+model = smf.ols(formula = 'review_score ~ wait_time + delay_vs_expected', data=df).fit()
 
-#instantiate a logistic model
-model = smf.logit(formula='survived ~ fare + C(sex) + age', data=df)
-
-# fit the model
-model = model.fit()
+#instantiate and fit a logistic model
+model = smf.logit(formula='survived ~ fare + C(sex) + age', data=df).fit()
 
 # evaluate
 model.params
